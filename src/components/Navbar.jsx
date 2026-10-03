@@ -10,7 +10,7 @@ const Navbar = ({ search, setSearch, fetchImages }) => {
   }
   return (
     <nav className="w-full px-6 p1-0.5 pb-2 mt-1 flex items-center 
-    gap-6 bg-white sticky top-0 z-50 ">
+    gap-6 bg-white sticky top-0 z-50">
       
     
       <svg className="w-[95px] text-black shrink-0 "
@@ -81,7 +81,7 @@ const Navbar = ({ search, setSearch, fetchImages }) => {
           bg-black
           text-white
           hover:bg-gray-800
-          cursor:pointer
+          cursor-pointer
           transition "
       >
         Search

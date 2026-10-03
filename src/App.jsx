@@ -25,6 +25,7 @@ const App = () => {
   //   return saved ? JSON.parse(saved) : [];
   // });
 
+
   useEffect(() => {
     sessionStorage.setItem("loadedImages", JSON.stringify(images));
   }, [images]);
@@ -50,7 +51,7 @@ const App = () => {
     };
   }, [loading, images.length, page, search]);
 
-  
+
   useEffect(() => {
     sessionStorage.setItem("imagePage", page.toString());
   }, [page]);
@@ -90,6 +91,11 @@ const App = () => {
     setLoading(false);
    }
   },[search]);
+  useEffect(() => {
+    if (images.length === 0) {
+      fetchImages();
+    }
+  }, [fetchImages, images.length]);
 
 
   const loadMoreImages = useCallback(async () => {
@@ -149,3 +155,4 @@ const App = () => {
 };
 
 export default App;
+
